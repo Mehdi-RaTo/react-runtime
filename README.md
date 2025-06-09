@@ -8,8 +8,5 @@
 - 📚 Ideal for learning/teaching React without setup
 - 🧩 Embed React into static sites or legacy projects
 
-## 🌐 Demo
-Check out the live demo here: [React Runtime Demo](https://mehdi-rato.github.io/react-runtime/demo.html)
-
 ## ⭐ Support
 If you find this project useful, please consider giving it a ⭐️ on GitHub — it helps others discover it too!
