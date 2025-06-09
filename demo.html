@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Runtime</title>
+    <script src="js/react-runtime.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Calibri;
+        }
+
+        .app-container {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        .counter-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 5px;
+            padding: 5px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+        .counter-container .title {
+            display: flex;
+            flex: 1;
+        }
+
+        .counter-container button {
+            width: 50px;
+            aspect-ratio: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // Class Component
+        class App extends React.Component {
+            render() {
+                return (
+                    <div className="app-container">
+                        <h1>React Runtime</h1>
+                        <p>Developer: Mehdi-RaTo</p>
+                        <Counter title="Num1" />
+                        <Counter title="Num2" backgroundColor="#f001" />
+                        <Counter title="Num3" backgroundColor="#00f1" />
+                    </div>
+                );
+            }
+        }
+
+        // Functional Component
+        function Counter(props) {
+            const [number, setNumber] = React.useState(0);
+
+            return (
+                <div className="counter-container" style={{ backgroundColor: props.backgroundColor || "#0001" }}>
+                    <p className="title">{props.title}: {number}</p>
+                    <button onClick={() => setNumber(number + 1)}>➕</button>
+                    <button onClick={() => setNumber(number - 1)}>➖</button>
+                </div>
+            );
+        }
+
+        // Render
+        ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+</body>
+
+</html>
